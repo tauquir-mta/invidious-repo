@@ -2,6 +2,37 @@
   "name": "Tauquir's Invidious Repo",
   "description": "A repository for the custom Invidious extension.",
   "pluginLists": [
-    "https://raw.githubusercontent.com/tauquir-mta/invidious-repo/builds/plugins.json"
+    "https://raw.githubusercontent.com/tauquir-mta/extensions/builds/plugins.json"
   ]
 }
+```Please go to your `invidious-repo` and edit the `repo.json` to have this corrected content. It must point to the `extensions` repository where your compiled code lives.
+
+---
+
+**2. Your `extensions` Repository (The "Factory and Warehouse")**
+
+*   **Its Job:** This is where all the work happens. It holds your source code, the build system, and the finished, compiled plugin.
+*   **The `main` (or `master`) Branch:** This is your "factory floor." It contains all your source code (`.kt` files) that you write and edit.
+*   **The `builds` Branch:** This is your "warehouse." The `make` command automatically compiled your code and placed the finished products here. This branch contains:
+    *   The compiled `InvidiousProvider.cs3` file.
+    *   A `plugins.json` file that lists all available plugins and points to the `.cs3` file.
+
+### The Complete Flow
+
+Here is how it works together:
+
+1.  CloudStream App contacts your `invidious-repo`.
+2.  It reads `repo.json`.
+3.  The corrected `repo.json` tells the app to go to `.../tauquir-mta/extensions/builds/plugins.json`.
+4.  The app downloads `plugins.json`, which tells it where to find `InvidiousProvider.cs3`.
+5.  The app downloads and installs the plugin.
+
+### Your Final Action
+
+1.  **Correct the `repo.json` file** in your `invidious-repo` on GitHub using the content I provided above.
+2.  **You are now completely finished.** The only thing left to do is add the repository URL to your CloudStream app.
+
+**The URL to add to CloudStream (it has not changed):**
+`https://raw.githubusercontent.com/tauquir-mta/invidious-repo/main/repo.json`
+
+You have successfully completed the entire process. Congratulations on your persistence
