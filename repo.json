@@ -2,6 +2,6 @@
   "name": "My Invidious Repo",
   "description": "A repository for the custom Invidious extension.",
   "pluginLists": [
-    "https://raw.githubusercontent.com/YOUR_USERNAME/invidious-repo/builds/plugins.json"
+    "https://raw.githubusercontent.com/tauquir-mta/invidious-repo/builds/plugins.json"
   ]
 }
